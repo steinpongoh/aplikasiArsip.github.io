@@ -1,0 +1,142 @@
+body{
+    font-family: Josefin Sans;
+    margin: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-image: url('../assets/img/kantor-sinode-gmim.jpg');
+    background-attachment: fixed;
+    background-position-x: right;
+    background-size: 68.5%;
+    width: 100%;
+}
+.background{
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(to right, #42275a 45%, rgba(0, 0, 0, 0.507));
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+body::-webkit-scrollbar{
+    display: none;
+    
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    color: white;
+    margin-top: 20px;
+    height: 70px;
+}
+
+header img{
+    max-width: 150px;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-content: start;
+    width: 100%;
+    height: 550px;
+    color: white;
+
+}
+
+.page-container .select-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
+.first-button button:hover{
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+@media screen and (max-width:1316px){
+    body{
+        background-position-x:center;
+    }
+    .page-container{
+        justify-content: center;
+    }
+    .background{
+        background-image: linear-gradient(to bottom right,rgb(66, 39, 90), rgb(115, 75, 109));
+    }
+    .button{
+        background-image: linear-gradient(to bottom right,rgb(66, 39, 90), rgb(115, 75, 109));
+    }
+
+    .page-container .select-login{
+        width: 70%;
+    }
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80vh;
+    height: 10vh;
+}
+
+.buttonContainer button{
+    position: relative;
+    font-family: "Josefin Sans";
+    border: 1px solid white;
+    background-color: #42275a;
+    width: 26vh;
+    height: 7vh;
+}
+
+.buttonContainer button::before{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    border: 1px solid white;
+    background-color: #42275a;
+    color: white;
+    transition: transform 100ms;
+    cursor: pointer;
+}
+
+.buttonContainer button:hover::before{
+    transform: translateX(-4px) translateY(-4px);
+}
+
+.buttonContainer button:active::before{
+    transform: translateX(0px) translateY(0px);
+}
+
+
+.buttonContainer button:nth-child(1){
+    margin-right: 3vh;
+}
+
+.buttonContainer button:nth-child(1):before{
+    content: 'Login Admin';
+    background-color: white;
+    color: #42275a;
+}
+.buttonContainer button:nth-child(2):before{
+    content: 'Login User';
+}
+/* linear-gradient(to right, #42275a, rgba(255, 255, 255, 0)) */
+/* theme color: rgb(126, 87, 194) */

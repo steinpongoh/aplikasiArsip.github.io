@@ -1,0 +1,907 @@
+body {
+    display: flex;
+    margin-top: 7%;
+    background-color: white;
+    font-family: Josefin Sans, Arial;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 65%;
+    height: 590px;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+}
+
+.leftSectionHeader {
+    margin-bottom: 5px;
+    padding-left: 40px;
+    color: rgb(66, 39, 90);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 60px);
+    height: 55px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+.leftSectionHeader img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.tablePage {
+    background-color: #413543;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    left: 20px;
+    top: 90%;
+}
+
+.tablePage section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.pageButtonNextAndPrevious {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 38px;
+    background-color: white;
+    color: #413543;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 5px;
+    transition: color 300ms ease-in-out;
+    border: 1px solid #413543;
+}
+
+.pageButtonNextAndPrevious:hover {
+    color: white;
+}
+
+.pageButtonNextAndPrevious::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: '';
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #413543;
+    border: 1px solid white;
+    z-index: -1;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    border-radius: 5px;
+}
+
+.pageButtonNextAndPrevious:hover::before,
+.pageButtonNextAndPrevious:focus::before {
+    transform: scaleX(1);
+}
+
+.pagination {
+    position: relative;
+    font-family: "Josefin Sans", Arial;
+    color: #413543;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 200ms ease-in-out;
+}
+
+.pagination:hover {
+    color: white;
+}
+
+.pagination::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #413543;
+    transform: scaleX(0);
+    border-radius: 5px;
+    z-index: -1;
+    transition: transform 200ms ease-in-out;
+}
+
+.pagination:hover::before {
+    transform: scaleX(1);
+}
+
+.paginationActive {
+    font-family: "Josefin Sans", Arial;
+    background-color: #413543;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+table {
+    font-weight: 100;
+    font-size: 5px;
+    font-family: "Josefin Sans", Arial;
+    margin-top: 15px;
+    width: 95%;
+    border-collapse: collapse;
+
+}
+
+.thead {
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    height: 40px;
+    background-color: #413543;
+    color: white;
+}
+
+.tbody {
+    text-align: left;
+    font-size: 13px;
+    height: 50px;
+    color: #413543;
+}
+
+.tbody td {
+    font-weight: 400;
+}
+
+.tbody td:nth-child(1) {
+    width: 50px;
+}
+
+tbody:nth-child(odd) {
+    background-color: rgb(221, 221, 221);
+}
+
+
+.tbody td:nth-child(2) {
+    padding-left: 10px;
+    width: 400px;
+    transition: font-size 0.15s;
+
+}
+
+.tbody td:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 7px;
+}
+
+.tbody td:nth-child(1),
+.tbody td:nth-child(3) {
+    text-align: center;
+}
+
+.removeButton {
+    border: 2px solid #413543;
+    background-color: #413543;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/removeLogoPutih.png');
+    background-position: center;
+    background-size: 25px;
+    transition: background-image 0.15s,
+        background-color 0.15s;
+}
+
+.removeButton:hover {
+    background-color: white;
+    background-image: url('../../assets/img/removeLogoUngu.png');
+}
+
+.ubahButton {
+    border: 2px solid #413543;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/ubahIconUngu.png');
+    background-position: center;
+    margin-left: 10px;
+    background-size: 25px;
+    transition: background-image 0.15s,
+        background-color 0.15s;
+}
+
+.ubahButton:hover {
+    background-color: hwb(291 21% 74%);
+    background-image: url('../../assets/img/ubahIconPutih.png');
+}
+
+.viewLink{
+    color: #413543;
+    transition: font-size 100ms;
+}
+
+.viewLink:hover{
+    font-size: 15px;
+}
+
+.test {
+    font-size: 10px;
+}
+
+.logout {
+    margin-left: 20%;
+}
+
+.popup-background {
+    background-color: rgba(0, 0, 0, 0.514);
+    position: fixed;
+    top: -150%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 100px;
+    bottom: 250px;
+    left: 380px;
+    right: 450px;
+    width: 45%;
+    height: 70%;
+    background-color: white;
+}
+
+.head {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #413543;
+    width: 93%;
+    height: 15%;
+    border-bottom: 1px solid #413543;
+}
+
+.inputFileWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25em;
+    height: 6em;
+    border: 2px dashed #413543;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #413543;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inputFileWrapper img {
+    width: 50px;
+}
+
+.inputFileWrapper input {
+    font-family: "Josefin Sans", Arial;
+    font-weight: bold;
+    color: #413543;
+    display: flex;
+    text-align-last: center;
+}
+
+.popupWindowForm {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: calc(100% - 100px);
+}
+
+.nameWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    height: 5em;
+}
+
+.nameWrapper input {
+    padding-left: 10px;
+    font-family: "Josefin Sans", Arial;
+    height: 30px;
+    outline: none;
+}
+
+.kategoriWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    height: 5em;
+}
+
+.kategoriWrapper select {
+    padding-left: 10px;
+    font-family: "Josefin Sans", Arial;
+    height: 40px;
+    margin-bottom: 2px;
+}
+
+::-webkit-file-upload-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.windowButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.windowButton input {
+    background-color: white;
+    font-family: "Josefin Sans", Arial;
+    color: #413543;
+    font-size: 15px;
+    font-weight: bold;
+    width: 50%;
+    height: 50px;
+    margin-right: 20px;
+    border: 1px solid #413543;
+    border-radius: 5px;
+    transition: background-color 50ms ease-in-out,
+        color 50ms ease-in-out;
+}
+
+.windowButton input:hover {
+    background-color: rgb(65, 53, 67);
+    color: white;
+}
+
+.windowButton button {
+    font-family: "Josefin Sans", Arial;
+    color: white;
+    background-color: #413543;
+    font-size: 15px;
+    font-weight: bold;
+    width: 50%;
+    height: 50px;
+    border: 1px solid #413543;
+    border-radius: 5px;
+    transition: background-color 50ms ease-in-out,
+        color 50ms ease-in-out;
+}
+
+.windowButton button:hover {
+    background-color: white;
+    color: #413543;
+}
+
+
+.popupWindowForm label {
+    font-family: 'Josefin Sans', 'Times New Roman';
+
+}
+
+.kategoriPopupBackground {
+    background-color: rgba(0, 0, 0, 0.514);
+    position: fixed;
+    top: -150%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+}
+
+.kategoriPopupWindow {
+    position: fixed;
+    top: 100px;
+    bottom: 250px;
+    left: 380px;
+    right: 450px;
+    width: 45%;
+    height: 50%;
+    background-color: white;
+}
+
+
+.rightSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterDashboard {
+    position: fixed;
+    width: 32%;
+    height: 85%;
+    left: 67%;
+    background-color: white;
+    box-shadow: 1px 1px 7px black;
+    border-radius: 0px;
+}
+
+.filterHeader {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    padding-left: 40px;
+    color: rgb(66, 39, 90);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: calc(100% - 60px);
+    height: 55px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+.filterHeader img {
+    width: 25px;
+    margin-right: 15px;
+}
+
+
+.filterForm {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: calc(100% - 70px);
+    width: calc(100% - 20px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.filterForm::-webkit-scrollbar {
+    width: 6px;
+}
+
+.filterForm::-webkit-scrollbar-thumb {
+    background: #413543;
+    border-radius: 10px;
+}
+
+header {
+    margin: 2px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-image: linear-gradient(to bottom right, rgb(66, 39, 90), rgb(115, 75, 109));
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0%;
+    bottom: 88%;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+header .headerLogo {
+    width: 9%;
+    height: 100%;
+    margin-right: 15%;
+    margin-left: 1%;
+    background-image: url('../../assets/img/logoGMIM.png');
+    background-size: calc(100% + 20px);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search {
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    border: 0;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 5px;
+    font-family: Josefin Sans;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 540px;
+    height: 45px;
+    background-color: white;
+    border-radius: 5px;
+    padding-right: 10px;
+    box-shadow: 5px 0px 9px rgb(48, 48, 48);
+}
+
+.searchContainer .searchButton {
+    height: 90%;
+    width: 45px;
+    background-color: rgb(182, 182, 182);
+    border: 0;
+    background-image: url("../../assets/img/searchIcon.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-size 0.08s;
+}
+
+.searchContainer .searchButton:hover {
+    background-size: 25px;
+}
+
+.searchContainer .resetButton {
+    height: 90%;
+    width: 45px;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    background-image: url("../../assets/img/resetIcon.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-size 0.08s;
+}
+
+.searchContainer .resetButton:hover {
+    background-size: 25px;
+}
+
+.logoutButton {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    background-color: transparent;
+    border-radius: 22px;
+    border: 0;
+    background-image: url('../../assets/img/logoutIcon.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-size 100ms;
+    cursor: pointer;
+}
+.logoutInfo{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    font-family: "Josefin Sans", Arial;
+    color: #413543;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    bottom: -45px;
+    left: -50px;
+    background-color: white;
+    border: 1px solid rgb(115, 75, 109);
+}
+
+.addUserButton {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    margin-left: 350px;
+    background-color: transparent;
+    border-radius: 22px;
+    border: 0;
+    background-image: url('../../assets/img/addUserIcon.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-size 100ms;
+}
+
+.addUserButton:hover{
+    background-size: 40px;
+}
+.logoutButton:hover{
+    background-size: 40px;
+}
+
+.userInfo{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    font-family: "Josefin Sans", Arial;
+    color: #413543;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    bottom: -45px;
+    left: -50px;
+    background-color: white;
+    border: 1px solid rgb(115, 75, 109);
+}
+
+
+/* ADD BUTTON */
+.addButton {
+    padding-left: 35px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Josefin Sans", Arial;
+    font-weight: 900;
+    margin-left: 71%;
+    color: white;
+    background-color: transparent;
+    height: 60%;
+    width: 15%;
+    border: 0;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+
+    --accent-color: rgb(115, 75, 109);
+}
+
+/* LOGOUT BUTTON */
+.addButton::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    content: 'Tambah';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -2px;
+    bottom: 0;
+    z-index: -1;
+    border-bottom-left-radius: 15px;
+    background-color: var(--accent-color);
+    transition: transform 300ms ease-in-out;
+
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.addButton:hover::before,
+.addButton:focus::before {
+    transform: scaleX(1);
+}
+
+
+.addButton div {
+    position: absolute;
+    margin-left: 70%;
+    width: 32%;
+    height: calc(100% + 6px);
+    border: 2px solid rgb(115, 75, 109);
+    border-radius: 200px;
+    background-color: rgb(255, 255, 255);
+    background-image: url('../../assets/img/addIconUngu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    box-shadow: 1px 0px 3px rgba(48, 48, 48, 0.493);
+    transition: background 300ms ease-in-out;
+}
+
+.addButton div:hover,
+.addButton div:active {
+    background-color: rgb(115, 75, 109);
+    background-image: url('../../assets/img/addIconPutih.png');
+}
+
+.addFilterButton {
+    padding-left: 35px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Josefin Sans", Arial;
+    font-weight: 900;
+    margin-left: 15%;
+    margin-right: 2em;
+    color: white;
+    background-color: transparent;
+    height: 60%;
+    width: 35%;
+    border: 0;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+
+    --accent-color: rgb(115, 75, 109);
+}
+
+/* LOGOUT BUTTON */
+.addFilterButton::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    content: 'Tambah';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -2px;
+    bottom: 0;
+    z-index: -1;
+    border-bottom-left-radius: 15px;
+    background-color: var(--accent-color);
+    transition: transform 300ms ease-in-out;
+
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.addFilterButton:hover::before,
+.addFilterButton:focus::before {
+    transform: scaleX(1);
+}
+
+
+.addFilterButton div {
+    position: absolute;
+    margin-left: 60%;
+    width: 30%;
+    height: calc(100% + 6px);
+    border: 2px solid rgb(115, 75, 109);
+    border-radius: 200px;
+    background-color: rgb(255, 255, 255);
+    background-image: url('../../assets/img/addIconUngu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    box-shadow: 1px 0px 3px rgba(48, 48, 48, 0.493);
+    transition: background 300ms ease-in-out;
+}
+
+.addFilterButton div:hover,
+.addFilterButton div:active {
+    background-color: rgb(115, 75, 109);
+    background-image: url('../../assets/img/addIconPutih.png');
+}
+
+.filterForm .buttonContainer:last-child {
+    margin-bottom: 50px;
+}
+
+.kategoriButton {
+    position: relative;
+    display: flex;
+    padding-left: 50px;
+    justify-content: left;
+    align-items: center;
+    font-family: "Josefin Sans", Arial;
+    width: 300px;
+    height: 100px;
+    margin-top: 10px;
+    background-color: #413543;
+    color: white;
+    border: 2px solid #413543;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.dataText {
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    top: 5em;
+    left: 16em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 20px;
+}
+
+.buttonContainer {
+    position: relative;
+}
+
+.remove {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    background-color: #413543;
+    border-radius: 20px;
+    background-image: url('../../assets/img/closeIcon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    z-index: 1;
+}
+.userEdit{
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    background-color: #413543;
+    border-radius: 20px;
+    background-image: url('../../assets/img/ubahIconPutih.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    z-index: 1;
+}
+
+.userPage{
+    height: 40px;
+    width: 120px;
+}
+
+.userPage::before{
+    content: 'Atur User';
+    text-decoration: none;
+}
+
+.userView{
+    color: #413543;
+    transition: font-size 100ms;
+}
+
+.userView:hover{
+    font-size: 17px;
+}
+
+/* color: rgb(115, 75, 109); */
